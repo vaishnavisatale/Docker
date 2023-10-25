@@ -1,0 +1,14 @@
+version: "3"
+services:
+  vsMongoDB:
+    image: mongo:latest
+    container_name: "vsMongoDB"
+    ports:
+      - 27017:27017
+  springboot-mongodb:
+    image: springboot-mongodb:1.0
+    container_name: springboot-mongodb
+    ports:
+      - 9091:9090
+    links:
+      - vsMongoDB
